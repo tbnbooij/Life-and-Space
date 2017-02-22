@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game of Life</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <style>
+      body {
+        background-color: black;
+        height: 100vh;
+        margin: 0;
+      }
+
+      #main_canvas {
+        background-color: #102366;
+        border-radius: 15px;
+        border: solid white 1px;
+        -webkit-animation-name:             rotate;
+        -webkit-animation-duration:         8s;
+        -webkit-animation-iteration-count:  infinite;
+        -webkit-animation-timing-function:  linear;
+        margin-left: -10vh;
+        margin-top: -10vh;
+        height: 10vh;
+        left: 50%;
+        position: absolute;
+        top: 10%;
+        width: 10vh;
+      }
+
+
+      @-webkit-keyframes rotate {
+        from {
+          -webkit-transform: rotate(0deg);
+        }
+        to {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+
+      #sun {
+        background-color : #e4a60f;
+        border-radius : 1000px;
+        box-shadow : 0 0 128px red;
+        width: 22vh;
+        height: 22vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top : -11vh;
+        margin-left : -11vh;
+      }
+
+      #canvas-orbit {
+          border: 2px none #373737;
+          border-radius: 50%;
+          left: 50%;
+          height: 56vh;
+          margin-top: -28vh;
+          margin-left: -28vh;
+          position: absolute;
+          top: 50%;
+          width: 56vh;
+          -webkit-animation: spin-right 20s linear infinite;
+          -moz-animation: spin-right 20s linear infinite;
+          -ms-animation: spin-right 20s linear infinite;
+          -o-animation: spin-right 20s linear infinite;
+          animation: spin-right 20s linear infinite;
+      }
+
+      @-webkit-keyframes spin-right {
+          100% {
+              -webkit-transform: rotate(360deg);
+          }
+      }
+      @-moz-keyframes spin-right {
+          100% {
+              -moz-transform: rotate(360deg);
+          }
+      }
+      @-keyframes spin-right {
+          100% {
+              transform: rotate(360deg);
+          }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="sun"></div>
+    <div id="canvas-orbit">
+      <canvas id="main_canvas"></canvas>
+    </div>
+
+  </body>
+  <script src="script.js"></script>
+</html>
